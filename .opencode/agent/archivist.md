@@ -23,6 +23,10 @@ You have two primary tool sets available:
 
 Prefer fetching real cube data over guessing a cube's contents. When the user names a cube, retrieve it from CubeCobra rather than assuming its list.
 
+# Git
+
+For any git operation (commits, pushes, status checks), do NOT run git commands yourself. Dispatch the `git-executor` subagent via the Task tool and have it perform the operation. It runs on a cheaper model and uses the `git-operations` skill, so this saves tokens. Give it the working directory and a precise description of the git task. Wait for its report and relay results to the user.
+
 # Design principles
 
 - **Archetype support**: each supported archetype needs enough playables, enablers, and payoffs to be a credible draft deck. Signal clearly.
