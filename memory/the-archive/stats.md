@@ -9,12 +9,12 @@
   - Three-color: 15 cards (Alara shards, Ikoria wedges: Yarok, Intet, Temur Ascendancy, etc.)
 - **Colorless:** 43 artifacts
 - **Lands:** 65 (12.0% of cube)
-  - 10 ABUR duals
+  - 10 original duals
   - 10 shocklands
   - 10 Pathways
-  - 10 Murders at Karlov Manor surveylands
+  - 10 surveil lands
   - 5 triomes
-  - 10 utility/colorless lands (Gaea's Cradle, Karn's Bastion, Castle Locthwain, Castle Vantress, Wasteland, Field of Ruin, Fountainport, etc.)
+  - 10 utility/colorless lands 
 
 ### Card types
 - **Creatures:** 261 (48.3%)
@@ -59,11 +59,5 @@ Note: Some cards have multiple types (e.g., artifact creatures, enchantment crea
 1. **Perfect monocolor balance** — exactly 73 cards per color
 2. **Creature-forward design** — 48.3% creatures (261 total) supports board-based gameplay and package synergies (Aristocrats, Tokens, ETB Value, etc.)
 3. **Healthy curve** — supports aggro, midrange, and control strategies
-4. **Strong mana base** — 65 lands (12.0% of cube) with ABUR duals, shocks, Pathways, surveylands, triomes provide excellent fixing for 2-3 color decks
+4. **Strong mana base** — 65 lands (12.0% of cube) with original duals, shocks, Pathways, surveil lands, triomes provide excellent fixing for 2-3 color decks
 5. **Adequate removal** — every color has plausible interaction, with Blue and Red leading
-
-### Structure snapshot
-- **Size:** 540 cards
-- **Lands:** 65 (12.0%)
-- **Color counts:** 73 W / 73 U / 73 B / 73 R / 73 G / 43 C / 67 multicolor
-- **CMC curve:** 0: 66 · 1: 69 · 2: 134 · 3: 110 · 4: 74 · 5+: 87
