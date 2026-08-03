@@ -1,14 +1,14 @@
 ---
 name: memory-bank
-description: Use when working with the persistent cube memory bank in `memory/` — loading a cube's context for a work session, starting a new cube, or recording design decisions, package changes, stats digests, and backburner ideas. Use whenever the user names a cube to work on or says they're starting a new cube.
+description: Use when working with the persistent cube memory bank in `memory/` — loading a cube's context for a work session, starting a new cube, or recording design decisions, package changes, stats digests, backburner ideas, and cross-cube cube ideas. Use whenever the user names a cube to work on or says they're starting a new cube.
 ---
 
 # Memory Bank
 
 The memory bank persists knowledge about each cube across opencode sessions.
 The cube list itself lives on CubeCobra; the bank holds everything else —
-identity, constraints, packages, decisions, stats digests, and backburner
-ideas.
+identity, constraints, packages, decisions, stats digests, backburner ideas,
+and unrefined cross-cube cube ideas.
 
 ## Storage layout
 
@@ -16,6 +16,7 @@ ideas.
 memory/
   INDEX.md                  # manifest: cube → shortId → dir, one-line identity, bootstrap date, last modified
   glossary.md               # cross-cube registry of specialized cube-design terms
+  ideas.md                  # cross-cube parking lot for unrefined cube ideas (newest first)
   <cube-dir>/
     identity.md             # identity, philosophy, size/format, constraints, CubeCobra link
     packages.md             # package matrix (play patterns, support, pairing)
@@ -31,6 +32,10 @@ memory/
   (desert cube, etc.). Never assume the meaning of a cube-type or format term —
   check the glossary first; if absent, ask the user and record it there (see
   the "Never guess cube-design vocabulary" rule in AGENTS.md).
+- `ideas.md` is a cross-cube parking lot: unrefined cube concepts that aren't
+  attached to any cube yet. Deep design work happens in a cube's
+  `backburner.md` once the idea is bootstrapped into a real cube; the idea line
+  stays in `ideas.md` for history with a link to its cube dir.
 
 ## File templates
 
@@ -138,6 +143,26 @@ Pending ideas, candidate swaps, experiments. Move to decisions.md when acted on.
 - <idea>
 ```
 
+### ideas.md
+
+```markdown
+# Cube Ideas
+
+Unrefined cube ideas jotted down for future use. Newest first. Promoted ideas
+link to their cube directory when bootstrapped — move the deep design work to
+the cube's `backburner.md` at that point, leaving the idea line here for
+history.
+
+## <YYYY-MM-DD>
+- <one-line idea>                    # newest entries first
+- <one-line idea> → [cube-dir]       # marked with a link when promoted
+```
+
+New ideas are prepended under a new date heading. When an idea is bootstrapped
+into a cube, prepend `→ memory/<cube-dir>` to its line; do not delete it.
+Ideas.md is cross-cube, so it never appears in INDEX.md and its changes do not
+bump any cube's `Last modified` date.
+
 ## Three workflows
 
 ### LOAD
@@ -167,7 +192,8 @@ Trigger: the user says they're starting a new cube.
 2. Create `<cube-dir>` with the five files from the answers. `packages.md`
    gets the header-only template, `stats.md` gets "No records analyzed yet.",
    `backburner.md` starts empty. `identity.md` gets a `## Vocabulary` section
-   listing the glossary terms that apply to this cube.
+   listing the glossary terms that apply to this cube. If the cube was born
+   from an `ideas.md` line, prepend `→ memory/<cube-dir>` to that idea line.
 3. Add the cube's row to `INDEX.md` with `Last modified` set to today's date.
 4. Ask the user whether to commit the new cube. If approved, dispatch
    `git-executor` to commit AND push (working dir `D:\Cube`). Never commit
