@@ -14,7 +14,7 @@ ideas.
 
 ```
 memory/
-  INDEX.md                  # manifest: cube → shortId → dir, one-line identity, bootstrap date
+  INDEX.md                  # manifest: cube → shortId → dir, one-line identity, bootstrap date, last modified
   <cube-dir>/
     identity.md             # identity, philosophy, size/format, constraints, CubeCobra link
     packages.md             # package matrix (play patterns, support, pairing)
@@ -35,9 +35,9 @@ exactly so the bank stays consistent across sessions.
 ### INDEX.md
 
 ```markdown
-| Cube | shortId | Dir | Identity | Bootstrapped |
-|------|---------|-----|----------|--------------|
-| <Name> | <shortId> | <slug> | <one-line identity> | <YYYY-MM-DD> |
+| Cube | shortId | Dir | Identity | Bootstrapped | Last modified |
+|------|---------|-----|----------|--------------|---------------|
+| <Name> | <shortId> | <slug> | <one-line identity> | <YYYY-MM-DD> | <YYYY-MM-DD> |
 ```
 
 ### identity.md
@@ -129,7 +129,8 @@ Trigger: the user names a cube (by name or short ID) to work on.
 4. Report a 2–3 line state summary: identity, active packages, open questions.
 
 Never load any other cube's files. If no cube is directed at session start,
-load nothing — the bank sits idle.
+load nothing — the bank sits idle. LOAD never edits the bank, so it does not
+bump the cube's `Last modified` date in INDEX.
 
 ### START NEW CUBE
 
@@ -139,7 +140,7 @@ Trigger: the user says they're starting a new cube.
 2. Create `<cube-dir>` with the five files from the answers. `packages.md`
    gets the header-only template, `stats.md` gets "No records analyzed yet.",
    `backburner.md` starts empty.
-3. Add the cube's row to `INDEX.md`.
+3. Add the cube's row to `INDEX.md` with `Last modified` set to today's date.
 4. Dispatch `git-executor` to commit the new cube (working dir `D:\Cube`).
 
 The cube is banked; nothing is loaded until the user names it for work.
@@ -152,8 +153,9 @@ an explicit user request to record something.
 1. Edit the relevant file: a package added/promoted/demoted in `packages.md`,
    a decided swap in `decisions.md`, a dated digest appended to `stats.md`, a
    backburner item added or moved.
-2. Keep each change small and scoped to the file it belongs in.
-3. Dispatch `git-executor` to commit the change (working dir `D:\Cube`).
+2. Bump the cube's `Last modified` date in `INDEX.md` to today's date.
+3. Keep each change small and scoped to the file it belongs in.
+4. Dispatch `git-executor` to commit the change (working dir `D:\Cube`).
 
 ## Bootstrap questionnaire
 
