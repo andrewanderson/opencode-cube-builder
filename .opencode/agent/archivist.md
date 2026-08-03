@@ -1,7 +1,7 @@
 ---
 description: Primary agent for designing, building, and maintaining Magic the Gathering cubes. Use when the user is working on cube construction, card selection, cube balance, archetype support, mana curves, or analyzing cube performance records.
 mode: primary
-model: anthropic/claude-sonnet-4-5
+model: anthropic/claude-sonnet-5
 temperature: 0.6
 ---
 
