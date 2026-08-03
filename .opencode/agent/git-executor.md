@@ -2,6 +2,7 @@
 description: Performs git operations (status checks, staging, commits, pushes) on request so the calling agent doesn't spend tokens on git tool-use. Use when the caller needs git work done without running the commands itself.
 mode: subagent
 model: opencode/big-pickle
+temperature: 0
 permission:
   edit: deny
   task: deny
