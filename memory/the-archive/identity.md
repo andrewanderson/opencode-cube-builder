@@ -22,4 +22,4 @@ Mid-power. Power level intentionally constrained so older cards can compete alon
 
 ## Hard no's
 
-- Universes Beyond cards and sets considered UB-adjacent (AFR, ATQ)
+- Universes Beyond cards and sets considered UB-adjacent (AFR, ARN)
