@@ -104,7 +104,19 @@ Newest first. Each entry: date, change, rationale.
 
 ## <YYYY-MM-DD>
 <digest of draft records / per-card stats analysis, referencing packages by name>
+
+### Structure snapshot
+- **Size:** <total card count>
+- **Lands:** <count>
+- **Color counts:** <W> W / <U> U / <B> B / <R> R / <G> G / <C> colorless
+- **CMC curve:** 0–1: <n> · 2: <n> · 3: <n> · 4: <n> · 5+: <n>
 ```
+
+Every stats.md digest MUST end with a structure snapshot: fetch the cube list
+from CubeCobra (`get_cube_list`), compute the four lines above, append them,
+then discard the raw list — never store the full list in the bank. The CubeCobra
+list is the single source of truth; the snapshot is a derived summary for
+drift tracking.
 
 ### backburner.md
 
@@ -153,9 +165,13 @@ an explicit user request to record something.
 1. Edit the relevant file: a package added/promoted/demoted in `packages.md`,
    a decided swap in `decisions.md`, a dated digest appended to `stats.md`, a
    backburner item added or moved.
-2. Bump the cube's `Last modified` date in `INDEX.md` to today's date.
-3. Keep each change small and scoped to the file it belongs in.
-4. Dispatch `git-executor` to commit the change (working dir `D:\Cube`).
+2. When the change touches `stats.md`, append the structure snapshot too:
+   fetch the cube list from CubeCobra (`get_cube_list`), compute the
+   Size / Lands / Color counts / CMC curve summary from the template above,
+   append it under the new digest, then discard the raw list.
+3. Bump the cube's `Last modified` date in `INDEX.md` to today's date.
+4. Keep each change small and scoped to the file it belongs in.
+5. Dispatch `git-executor` to commit the change (working dir `D:\Cube`).
 
 ## Bootstrap questionnaire
 
