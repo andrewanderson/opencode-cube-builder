@@ -31,10 +31,6 @@ Delegation rules: the Archivist never runs git itself (dispatch `git-executor`) 
 
 - **`memory/glossary.md`** — cross-cube registry of specialized cube-design terms (desert cube, blue-prison, etc.). Consult before assuming the meaning of any cube-type or format term (see Interaction Rule 6). The memory bank also holds per-cube files via the `memory-bank` skill.
 
-### Global config (`~/.config/opencode/opencode.jsonc`)
-
-Not in this repo — referenced for context. Contains: default model `groq/openai/gpt-oss-120b`, `small_model` `groq/openai/gpt-oss-20b`, and MCP servers for `scryfall` and `cubecobra`.
-
 ### Git
 
 - Remote: `origin` → `https://github.com/andrewanderson/opencode-cube-builder.git`, branch `main`.
