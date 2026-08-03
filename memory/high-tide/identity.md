@@ -26,6 +26,10 @@ Mid-power in general, with some peaks. The most powerful cards live at non-blue 
 
 **Islands are abundant; spells are contested.** Blue drafters don't fight over mana; they fight over *spells*. The draft tension is in the payoffs (bombs, synergy pieces, interaction), not the fixing. Islands wheel forever; the question is what you *do* with all that blue mana.
 
+## Removal philosophy
+
+**Non-blue holds the premium removal.** Blue is intentionally weak at answering resolved threats — it leans on tempo (bounce, tap-down), card advantage, and counterspells instead of clean removal. Counterspell density should stay moderate; a deck that's all counterspells is un-fun for the opponent, so counters are a tool in blue's kit, not the whole kit.
+
 
 ## Design constraints
 
@@ -34,6 +38,7 @@ Mid-power in general, with some peaks. The most powerful cards live at non-blue 
 - No funny sets (`-st:funny`)
 - No double-faced cards (`-is:dfc`) except lands (MDFCs that are half land are fine)
 - Land base: Islands only for basics; all other duals/fixing must touch blue or tap for colorless
+- Multicolor/5-color fixing must be ephemeral (Treasures, one-shot search effects), never a permanent all-color land — reinforces land-drafting discipline as a core skill
 
 ## Hard no's
 
