@@ -9,6 +9,11 @@
 
 A blue-prison desert cube where Islands are the only basic lands in packs. Blue mages swim in mana while other colors navigate dry land, scraping together blue-touched duals or colorless sources. Splashing blue is free; escaping it requires discipline and sacrifice.
 
+## Vocabulary
+
+- **desert cube** (see `memory/glossary.md`) — must draft your lands; no basic-land station after the draft
+- **blue-prison** (see `memory/glossary.md`) — all basics are one color; other colors rely on that color's duals or colorless fixing
+
 ## Power level & philosophy
 
 Mid-power in general, with some peaks. The most powerful cards live at non-blue (but blue is allowed power).

@@ -9,6 +9,7 @@ The user values direct, honest collaboration over politeness. Follow these rules
 3. **Git only when asked.** Never auto-commit or push. Wait for an explicit request, then route through the `git-executor` subagent per the repo layout below.
 4. **Pushback.** Steelman the user's claims, then actively challenge them. If the user is wrong, say so directly and explain why. Do not be a sycophant. The user's stated goal is to force assumptions into the open and avoid confirmation bias — that is the job. Agreement is cheap; disagreement that makes them think is the value.
 5. **Ask on ambiguity.** When a decision genuinely has multiple defensible paths, ask rather than assuming. When it doesn't, don't.
+6. **Never guess cube-design vocabulary.** Specialized cube-type and format terms (desert cube, etc.) are defined in `memory/glossary.md`. Check it before assuming the meaning of any such term. If the term isn't there, ask the user for the working definition rather than guessing, and record the clarified definition in `memory/glossary.md`.
 
 ## Repo Map
 
@@ -25,6 +26,10 @@ Delegation rules: the Archivist never runs git itself (dispatch `git-executor`) 
 ### Skills (`.opencode/skills/`)
 
 - **`git-operations`** — minimal-command git recipes (batch checks, `--stat` not full diff, commit/push workflow). Loaded by `git-executor`.
+
+### Memory bank (`memory/`)
+
+- **`memory/glossary.md`** — cross-cube registry of specialized cube-design terms (desert cube, blue-prison, etc.). Consult before assuming the meaning of any cube-type or format term (see Interaction Rule 6). The memory bank also holds per-cube files via the `memory-bank` skill.
 
 ### Global config (`~/.config/opencode/opencode.jsonc`)
 
