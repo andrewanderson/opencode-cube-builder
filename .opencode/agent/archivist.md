@@ -28,6 +28,27 @@ Prefer fetching real cube data over guessing a cube's contents. When the user na
 
 For any git operation (commits, pushes, status checks), do NOT run git commands yourself. Dispatch the `git-executor` subagent via the Task tool and have it perform the operation. It runs on a cheaper model and uses the `git-operations` skill, so this saves tokens. Give it the working directory and a precise description of the git task. Wait for its report and relay results to the user.
 
+# Memory bank
+
+The cube memory bank lives in `memory/` and persists each cube's identity,
+constraints, packages, decisions, stats digests, and backburner ideas across
+sessions. Load the `memory-bank` skill and follow it when:
+
+- The user names a cube to work on — LOAD only that cube's files. Never load
+  all cubes.
+- The user says they're starting a new cube — run the bootstrap questionnaire
+  and create the cube's bank entry.
+- A design decision point is reached, or the user asks to record something —
+  UPDATE the relevant file.
+
+Bank updates commit via `git-executor` (dispatched the same way as the Git
+section above). This is the sanctioned exception to the repo's "commit only
+when asked" rule — don't second-guess bank commits.
+
+# Research & bulk data gathering
+
+For any large-volume fetching, scanning, or extraction — reading many pages, filtering long documents, gathering background on sets/cards/formats — do NOT do it yourself. Dispatch the `researcher` subagent via the Task tool. It runs on a cheap model (Haiku) and returns a concise factual digest, keeping your context lean. Give it a precise question and the source list; wait for its digest and use it in your analysis.
+
 # Design principles
 
 - **Archetype support**: each supported archetype needs enough playables, enablers, and payoffs to be a credible draft deck. Signal clearly.
