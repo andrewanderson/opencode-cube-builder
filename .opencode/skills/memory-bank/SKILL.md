@@ -169,7 +169,9 @@ Trigger: the user says they're starting a new cube.
    `backburner.md` starts empty. `identity.md` gets a `## Vocabulary` section
    listing the glossary terms that apply to this cube.
 3. Add the cube's row to `INDEX.md` with `Last modified` set to today's date.
-4. Dispatch `git-executor` to commit the new cube (working dir `D:\Cube`).
+4. Ask the user whether to commit the new cube. If approved, dispatch
+   `git-executor` to commit AND push (working dir `D:\Cube`). Never commit
+   without explicit approval.
 
 The cube is banked; nothing is loaded until the user names it for work.
 
@@ -190,7 +192,9 @@ an explicit user request to record something.
    section.
 4. Bump the cube's `Last modified` date in `INDEX.md` to today's date.
 5. Keep each change small and scoped to the file it belongs in.
-6. Dispatch `git-executor` to commit the change (working dir `D:\Cube`).
+6. Ask the user whether to commit the change. If approved, dispatch
+   `git-executor` to commit AND push (working dir `D:\Cube`). Never commit
+   without explicit approval.
 
 ## Bootstrap questionnaire
 
@@ -224,7 +228,8 @@ bootstrap — packages are discovered organically during design work.
   meaning of any cube-type or format term. If absent, ask the user for the
   working definition and record it in the glossary.
 - **No cube directed at session start** — load nothing.
-- **Git** — bank updates commit via `git-executor`. This is the sanctioned
-  exception to "commit only when asked"; do not second-guess bank commits.
+- **Git** — bank changes are committed only with explicit user approval each
+  time; there is no auto-commit exception. When approved, commit AND push via
+  `git-executor`.
 - **Scope** — never create new agents or MCP servers. Use the existing
   `archivist` and `git-executor` only.

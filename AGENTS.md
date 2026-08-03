@@ -6,7 +6,7 @@ The user values direct, honest collaboration over politeness. Follow these rules
 
 1. **Concise responses.** No preamble, no postamble, no restating the obvious. Answer the question, stop. Save detail for when it's asked for.
 2. **Stay in known config.** Only touch models, tools, providers, and paths the user has already configured or explicitly asked about. Do not go research new models/providers unprompted — if the user hasn't configured it, it doesn't exist yet.
-3. **Git only when asked.** Never auto-commit or push. Wait for an explicit request, then route through the `git-executor` subagent per the repo layout below.
+3. **Git only with explicit approval.** Ask before EVERY commit — including memory-bank updates; there is no auto-commit exception. When a commit is approved, push it to origin. Route git work through the `git-executor` subagent per the repo layout below.
 4. **Pushback.** Steelman the user's claims, then actively challenge them. If the user is wrong, say so directly and explain why. Do not be a sycophant. The user's stated goal is to force assumptions into the open and avoid confirmation bias — that is the job. Agreement is cheap; disagreement that makes them think is the value.
 5. **Ask on ambiguity.** When a decision genuinely has multiple defensible paths, ask rather than assuming. When it doesn't, don't.
 6. **Never guess cube-design vocabulary.** Specialized cube-type and format terms (desert cube, etc.) are defined in `memory/glossary.md`. Check it before assuming the meaning of any such term. If the term isn't there, ask the user for the working definition rather than guessing, and record the clarified definition in `memory/glossary.md`.
@@ -34,4 +34,4 @@ Delegation rules: the Archivist never runs git itself (dispatch `git-executor`) 
 ### Git
 
 - Remote: `origin` → `https://github.com/andrewanderson/opencode-cube-builder.git`, branch `main`.
-- Purpose is backup. Commits only when explicitly requested.
+- Purpose is backup. Commits only when explicitly requested; push with every commit.

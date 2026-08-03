@@ -9,6 +9,8 @@ Perform git tasks with the **minimum number of commands** — every extra comman
 
 ## Golden Rules
 
+- Never commit without explicit user approval for THAT commit — there is no
+  auto-commit exception. When a commit is approved, push it.
 - One command per operation. Do not re-run commands to "confirm" — trust git's output.
 - Use `--short` and `--stat`: full `git diff` and full `git status` output waste tokens.
 - Never read file contents to decide a commit message — the diff stat plus filenames is enough.
