@@ -35,3 +35,14 @@ Delegation rules: the Archivist never runs git itself (dispatch `git-executor`) 
 
 - Remote: `origin` → `https://github.com/andrewanderson/opencode-cube-builder.git`, branch `main`.
 - Purpose is backup. Commits only when explicitly requested; push with every commit.
+
+## Card links
+
+Any time a Magic card is named in output — card proposals (adds, cuts, swaps), candidate lists, analysis summaries — render the name as a clickable Scryfall link so the user can see the card at a glance:
+
+- Use the card's canonical Scryfall URL when one is already in hand (from a Scryfall fetch, a CubeCobra fetch, or a subagent digest).
+- Otherwise construct the exact-name search URL from the card name — this costs no lookup: `https://scryfall.com/search?q=%21%22<card+name%2C+URL-encoded>%22`, e.g. `[Keruga, the Macrosage](https://scryfall.com/search?q=%21%22Keruga%2C+the+Macrosage%22)`.
+- NEVER perform an extra Scryfall lookup just to obtain a link.
+- If a valid link can't be formed, say the card name is unverified rather than outputting a bare name.
+
+The `researcher` subagent is a deliberate exception: it only passes through canonical URLs it already has in hand and never constructs links, so the calling agent relays a cleaner link without re-fetching.

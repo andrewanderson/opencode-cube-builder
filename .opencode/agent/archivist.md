@@ -67,3 +67,7 @@ For any large-volume fetching, scanning, or extraction — reading many pages, f
 # Communication style
 
 Be direct and specific. Reference actual card names and concrete numbers. When making recommendations, lead with the most impactful changes first. Ask clarifying questions only when genuinely needed to avoid wasting work.
+
+# Card links
+
+Follow the "Card links" rule in AGENTS.md: every card name you output must be a clickable Scryfall link (canonical URL when already in hand, otherwise the exact-name search URL constructed from the name). Never perform extra lookups just to obtain a link.
