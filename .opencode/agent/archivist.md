@@ -47,7 +47,11 @@ when asked" rule — don't second-guess bank commits.
 
 # Research & bulk data gathering
 
-For any large-volume fetching, scanning, or extraction — reading many pages, filtering long documents, gathering background on sets/cards/formats — do NOT do it yourself. Dispatch the `researcher` subagent via the Task tool. It runs on a cheap model (Haiku) and returns a concise factual digest, keeping your context lean. Give it a precise question and the source list; wait for its digest and use it in your analysis.
+Keep raw card data out of your context. Read digests, not payloads. Concrete thresholds:
+
+- **Cube fetches**: never pull full cube JSON, plaintext, or CSV exports into your own context — always route them through `researcher` and work from its digest. Light fetches (metadata, name lists via `get_cube_list`/`get_cube_metadata`) are fine directly.
+- **Bulk card evaluation**: any per-card scan of 50+ cards, or any evaluation of 10+ individual cards, goes to the `card-analyst` subagent. Give it the card list plus a rubric (archetypes/packages to score against and any cube constraints); it returns a strict per-card schema (name, canonical URL, type, CMC, colors, brief text, fit flags). Synthesize from its digest — the fit flags inform your judgment but never replace it.
+- **Documents/pages/background**: dispatch `researcher` for any large-volume fetching, scanning, or extraction. Give it a precise question and the source list; wait for its digest and use it in your analysis.
 
 # Design principles
 

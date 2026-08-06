@@ -20,8 +20,9 @@ This repo contains the opencode configuration for building and maintaining Magic
 - **`archivist`** (primary, `anthropic/claude-sonnet-4-5`, temperature 0.6) — the main cube designer. Handles design, card evaluation, cube balance, record analysis.
 - **`git-executor`** (subagent, `opencode/big-pickle`, temperature 0) — performs ALL git operations on request. `edit` and `task` denied. Loads the `git-operations` skill. Only agent allowed to run git commands.
 - **`researcher`** (subagent, `anthropic/claude-haiku-4-5`, temperature 0) — bulk fetching, scanning, and extraction. `edit` and `bash` denied. Returns concise factual digests to keep the primary agent's context lean.
+- **`card-analyst`** (subagent, `anthropic/claude-haiku-4-5`, temperature 0) — bulk Magic card scoring against a caller-supplied rubric. Returns a strict per-card schema (name, canonical URL, type, CMC, colors, brief text, fit flags). `edit` and `bash` denied. Use for per-card scans of 50+ cards or evaluations of 10+ individual cards.
 
-Delegation rules: the Archivist never runs git itself (dispatch `git-executor`) and never does large-volume fetching itself (dispatch `researcher`).
+Delegation rules: the Archivist never runs git itself (dispatch `git-executor`), never does large-volume fetching itself (dispatch `researcher`), and never does bulk card evaluation itself (dispatch `card-analyst` with a rubric).
 
 ### Skills (`.opencode/skills/`)
 
