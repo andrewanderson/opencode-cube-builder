@@ -28,7 +28,7 @@ One line per card, pipe-separated, no prose:
 
 `Name | https://scryfall.com/<canonical> | Type | CMC | colors | ≤12-word text summary | flags`
 
-- **URL**: canonical Scryfall page URL from the fetch. If the card isn't fetchable, use `unverified` instead of a bare name or a guessed URL.
+- **URL**: canonical Scryfall page URL from the fetch. NEVER fabricate or guess a URL — if the card isn't fetchable, write `unverified`. A wrong URL is worse than none.
 - **text summary**: oracle text compressed to ≤12 words — enough for the caller to judge fit without re-fetching.
 - **flags**: `+<archetype>` for each rubric item the card plausibly supports, `-<archetype>` for each it conflicts with, empty if neutral. Use only rubric items the caller named; don't invent archetypes.
 
@@ -36,6 +36,7 @@ If the caller asks for analysis (prices, legality, synergy verdicts, comparisons
 
 # Cardinal rules
 
-- Facts and flags only — no editorializing, no recommendations. Fit judgment against the rubric is your job; final design calls belong to the caller.
-- Keep the digest under ~8k tokens unless the caller explicitly asks for more.
+- Facts and flags only — no editorializing, no recommendations, no prose between lines. Fit judgment against the rubric is your job; final design calls belong to the caller.
+- Keep the digest under ~2k tokens unless the caller explicitly asks for more.
 - When the digest mentions cards the caller will link, the URLs above are the payload — never drop or shorten them.
+- Before returning a large list, sanity-check your count against the input: every input card should appear exactly once (or be explicitly marked `unverified`). A silently dropped card is a failed job.
