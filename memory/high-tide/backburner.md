@@ -45,6 +45,19 @@ Pending ideas, candidate swaps, experiments. Move to decisions.md when acted on.
 - **Paradoxical Outcome** - Because it's cool
 - **Electrostatic Infantry** - Spell slinging
 
+### To procure
+
+Named/flagged in analysis but not yet found in the physical stack or maybeboard — need to track these down.
+
+- **High Tide** — the namesake card itself. Not yet in the maybeboard.
+- **Standstill** — Standstill/Blueggro's namesake card.
+- **Force of Will, Daze** — free counterspells the Standstill/Blueggro plan needs.
+- **Glimpse the Unthinkable, Maddening Cacophony, Tasha's Hideous Laughter** — the named aggressive-mill payoffs.
+- **Opposition** — the tap-lock namesake for Opposition/tokens; without it that package is just "a deck with tokens."
+- **Polymorph, Proteus Staff** — the actual flip-into-a-fatty enablers for the Polymorph package.
+- **Upheaval** — namesake card, still unresolved whether to keep or cut given the land anti-synergy already noted.
+- **Bribery, Control Magic, Treachery, Gilded Drake** — the named one-shot theft payoffs for the Steal package.
+
 ### Structural questions (not decided)
 
 - **Collect-'em-all / break singleton** — allow multiples of specific payoff cards (Rat Colony, Relentless Rats, Nagas, etc.)? Bigger structural call than a normal backburner item — affects draft-pack math and deckbuilding for anyone who opens those slots. Needs a dedicated conversation before deciding scope, not a quick yes/no.
