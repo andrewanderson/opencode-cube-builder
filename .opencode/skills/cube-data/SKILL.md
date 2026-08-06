@@ -13,7 +13,7 @@ The rules below keep only small, derived slices in context.
 
 | Need | Tool | Payload |
 |------|------|---------|
-| Compact per-board card rows | `get_cube_board` (board=mainboard/maybeboard/basics, optional `fields`) | small (~70KB worst case, defaults much smaller) |
+| Compact per-board card rows | `get_cube_board` (board=mainboard/maybeboard/basics, optional `fields`) | ~70KB for a full 333-card board (default fields); ~200KB with `oracle_text` |
 | Just names, one line per card | `get_cube_list` | tiny |
 | Cube metadata, no cards | `get_cube_metadata` | small |
 | Board-labeled text export | `get_cube_plaintext` | medium |
@@ -22,7 +22,8 @@ The rules below keep only small, derived slices in context.
 
 `get_cube_board` is the workhorse. Default fields are name, type, cmc, colors,
 color_identity, rarity, scryfall_uri. Add `oracle_text` only when rules text is
-actually needed — it roughly triples the payload. Use `limit` for a quick peek.
+actually needed — it roughly triples the payload (a full board with oracle text
+is ~200KB / ~50k tokens, not a light fetch). Use `limit` for a quick peek.
 
 ## Fetch-once pattern
 
