@@ -26,6 +26,8 @@ Mid-power in general, with some peaks. The most powerful cards live at non-blue 
 
 **Islands are abundant; spells are contested.** Blue drafters don't fight over mana; they fight over *spells*. The draft tension is in the payoffs (bombs, synergy pieces, interaction), not the fixing. Islands wheel forever; the question is what you *do* with all that blue mana.
 
+**Mono-blue is the exception, not the norm.** Target calibration: in an 8-player pod, only 1–2 drafters should end up truly mono-blue. The other 6–7 should each reach into at least one second color for payoffs — blue supplies the mana and interaction, but staying mono-blue forfeits the color pair's payoffs (the best threats/win-cons live at WU/UB/UR/UG, not mono-U). This is a quantitative target, not just a vibe — it will directly drive color density and manabase decisions (how many blue-touched duals per pair vs. mono-U playables) once the land package is built. Revisit this number when tuning fixing density.
+
 ## Removal philosophy
 
 **Non-blue holds the premium removal.** Blue is intentionally weak at answering resolved threats — it leans on tempo (bounce, tap-down), card advantage, and counterspells instead of clean removal. Counterspell density should stay moderate; a deck that's all counterspells is un-fun for the opponent, so counters are a tool in blue's kit, not the whole kit.
