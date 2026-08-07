@@ -33,6 +33,17 @@ Mid-power in general, with some peaks. The most powerful cards live at non-blue 
 **Non-blue holds the premium removal.** Blue is intentionally weak at answering resolved threats — it leans on tempo (bounce, tap-down), card advantage, and counterspells instead of clean removal. Counterspell density should stay moderate; a deck that's all counterspells is un-fun for the opponent, so counters are a tool in blue's kit, not the whole kit.
 
 
+## Mana cost equivalence (off-blue color count)
+
+Because all non-basic fixing touches blue or is colorless — there is no WB, WR, WG, BR, BG, or RG dual anywhere in the format — casting difficulty is driven by the count of **distinct non-blue colors** in a card's cost, not its total color count:
+
+- **0 non-blue colors** (mono-U): trivial, playable by any deck.
+- **1 non-blue color** (mono-W/B/R/G, or any Ux gold card): identical difficulty. A Ux gold card needs exactly the same dual(s) as the mono-colored card of its off-blue color, since blue is already free (80 Islands + every dual taps for U). Treat Ux gold cards as full-strength playables of their off-blue color when counting color depth — not a discount, not a premium.
+- **2 non-blue colors** (a non-blue gold pair like WB/WR/WG/BR/BG/RG, OR any 3-color card that includes U, e.g. WUB): the real stretch tier. Needs two distinct duals (e.g. UW + UB) regardless of whether U is in the cost — a WUB card is **not** harder to cast than a WB card in this land base; they are the same difficulty tier. This is the tier that should stay rare and be treated as the "expert edge case" territory the identity already calls out.
+- **3 non-blue colors**: hardest tier, near-unplayable for most decks — needs 3 distinct duals.
+
+Caveats: double/triple colored pips (e.g. 1WW) are a separate color-intensity issue, orthogonal to this — track per-card, not per-category. Ephemeral multicolor fixing (Treasures, one-shot search — already allowed under Design constraints) is a release valve at the 2-non-blue-color tier, softening it, not eliminating it.
+
 ## Design constraints
 
 - No Universes Beyond cards (`-is:universesbeyond` in Scryfall searches)
