@@ -44,6 +44,10 @@ Because all non-basic fixing touches blue or is colorless — there is no WB, WR
 
 Caveats: double/triple colored pips (e.g. 1WW) are a separate color-intensity issue, orthogonal to this — track per-card, not per-category. Ephemeral multicolor fixing (Treasures, one-shot search — already allowed under Design constraints) is a release valve at the 2-non-blue-color tier, softening it, not eliminating it.
 
+**Confirmed in practice (2026-08-30):** mock drafting validated this — since every seat has blue sources, a Ux card plays like its mono-X equivalent, and a Uxy card plays like the xy gold card with U dropped. Operationalized in CubeCobra by **manually overriding the Color field** so Ux cards display/sort as X and Uxy cards display/sort as xy — the tool now reflects functional color identity, not literal mana cost.
+
+**Caveat for anyone reading cube exports:** because of this override, the `Color`/`Color Category` fields in this cube's CSV/JSON exports do NOT always match the card's actual printed mana cost — e.g. Jeskai Ascendancy (`{U}{R}{W}`) and Alela, Artful Provocateur (`{1}{W}{U}{B}`) both show as blue-stripped (RW / BW) in exports despite genuinely costing blue mana. This is intentional, not a data error. When a card's literal color identity is decision-critical (not just its functional swimlane), verify with Scryfall directly rather than trusting the export field.
+
 ## Design constraints
 
 - No Universes Beyond cards (`-is:universesbeyond` in Scryfall searches)

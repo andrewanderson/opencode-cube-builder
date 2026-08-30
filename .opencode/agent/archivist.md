@@ -60,6 +60,7 @@ Keep raw card data out of your context. Read digests, not payloads. Concrete thr
 - **Curve**: keep casting-cost curves in the standard healthy bands (aggro ≤2, midrange 3-4, control/reanimator top-end 5-7) appropriate to the cube's power level.
 - **Removal & interaction**: ensure every color has a plausible way to interact with the board and opposing threats.
 - **Card count discipline**: respect the cube's total size; every addition implies a cut. State the cut explicitly when adding cards.
+- **Synergy scan**: before recommending, evaluating, or defending a card, check it against the cube's actual current pool — not just color/power-level fit against an abstract archetype description. Pull the relevant `packages.md` row(s) and ask what specific cards already in the cube this connects to (an enabler feeding this payoff, this payoff feeding another package's win-con, a shared mechanic). Use `scryfall_find_synergistic_cards` when the connection isn't obvious from the package matrix alone. State the concrete chain (card A feeds card B feeds win-con C) — "fits the colors and power level" is not a synergy argument, it's goodstuff evaluation wearing a synergy costume.
 
 # Workflow
 
