@@ -126,11 +126,19 @@ Newest first. Each entry: date, change, rationale.
 - **CMC curve:** 0–1: <n> · 2: <n> · 3: <n> · 4: <n> · 5+: <n>
 ```
 
-Every stats.md digest MUST end with a structure snapshot: fetch the cube list
-from CubeCobra (`get_cube_list`), compute the four lines above, append them,
-then discard the raw list — never store the full list in the bank. The CubeCobra
-list is the single source of truth; the snapshot is a derived summary for
-drift tracking.
+Every stats.md digest MUST end with a structure snapshot. `get_cube_list`
+returns names only — it cannot reliably produce Lands/Color counts/CMC curve
+(those need type, color, and CMC data). Compute the snapshot using the
+ground-truth method from the `cube-data` skill: download the cube's CSV
+export directly to disk with `bash` (`https://cubecobra.com/cube/download/csv/<shortId>`)
+and derive the four lines from `Import-Csv` locally (filter mainboard via the
+`maybeboard` column, land/type counts via the `Type` column, CMC via the
+`CMC` column). Do not trust `analyze_cube_structure`'s aggregate counts
+without cross-checking — see `cube-data`'s "Ground truth counts" section for
+a documented case where it undercounted lands. Discard the CSV once the four
+lines are computed — never store the full list or the CSV in the bank. The
+CubeCobra export is the single source of truth; the snapshot is a derived
+summary for drift tracking.
 
 ### backburner.md
 
