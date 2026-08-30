@@ -2,6 +2,14 @@
 
 Pending ideas, candidate swaps, experiments. Move to decisions.md when acted on.
 
+## 2026-08-30 — NEXT SESSION: review real decklists
+
+**High priority — pick this thread up first.** We now have test drafts logged in CubeCobra, but the bot-draft decklists have never been reviewed. Next session should pull the actual decklists from CubeCobra records and review them against `packages.md` for archetype coherence — do the drafters who opened storm/self-mill/blue-burn/etc. actually end up with a coherent version of that package, or just goodstuff? This is the first real signal on whether the packages are draftable as designed.
+
+- Bot picks are NOT trusted for card-strength signal — decklists are the best signal for archetype coherence.
+- Known watch items to check against real decks: Force of Will + Daze (one peer flagged too strong — kept deliberately), mono-U coherence, "missing stuff" gaps.
+- Human multiplayer drafts haven't happened yet; when they do, review those decklists the same way.
+
 ## 2026-08-03
 
 ### Archetypes
