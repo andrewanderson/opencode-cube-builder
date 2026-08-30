@@ -28,6 +28,15 @@ Mid-power in general, with some peaks. The most powerful cards live at non-blue 
 
 **Mono-blue is the exception, not the norm.** Target calibration: in an 8-player pod, only 1–2 drafters should end up truly mono-blue. The other 6–7 should each reach into at least one second color for payoffs — blue supplies the mana and interaction, but staying mono-blue forfeits the color pair's payoffs (the best threats/win-cons live at WU/UB/UR/UG, not mono-U). This is a quantitative target, not just a vibe — it will directly drive color density and manabase decisions (how many blue-touched duals per pair vs. mono-U playables) once the land package is built. Revisit this number when tuning fixing density.
 
+**Green is the designated answer to blue oxygen (confirmed 2026-08-30).** If blue is the default and counterspells/tempo are its removal substitute, green is stocked with the resilience tools to fight back — **10 of green's ~38 nonland cards (over a quarter of the color)** carry explicit anti-blue text:
+
+- Protection/hexproof from blue: [Skylasher](https://scryfall.com/search?q=%21%22Skylasher%22), [Karoo Meerkat](https://scryfall.com/search?q=%21%22Karoo+Meerkat%22), [Sporeweb Weaver](https://scryfall.com/search?q=%21%22Sporeweb+Weaver%22), [Veil of Summer](https://scryfall.com/search?q=%21%22Veil+of+Summer%22) (also hexproof from black)
+- Can't be countered: [Skylasher](https://scryfall.com/search?q=%21%22Skylasher%22), [Veil of Summer](https://scryfall.com/search?q=%21%22Veil+of+Summer%22), [Surrak, Elusive Hunter](https://scryfall.com/search?q=%21%22Surrak%2C+Elusive+Hunter%22), [Destiny Spinner](https://scryfall.com/search?q=%21%22Destiny+Spinner%22), [Balustrade Wurm](https://scryfall.com/search?q=%21%22Balustrade+Wurm%22)
+- Punishes blue specifically: [Seedtime](https://scryfall.com/search?q=%21%22Seedtime%22) (extra turn if an opponent cast blue this turn), [Eyes of the Wisent](https://scryfall.com/search?q=%21%22Eyes+of+the+Wisent%22) (token if an opponent casts blue on your turn)
+- Punishes instant-speed play generally (hits blue hardest since that's its whole plan): [Arasta of the Endless Web](https://scryfall.com/search?q=%21%22Arasta+of+the+Endless+Web%22) (token whenever an opponent casts an instant/sorcery)
+
+This isn't a package (no enabler/payoff structure) — it's a resilience thread, but at this density it's a real pillar of green's identity, not incidental flavor. It gives UG decks and green splashes genuine agency against the Draw-go control mirror, and it's load-bearing enough to the cube's core premise to live here rather than buried in `packages.md`.
+
 ## Removal philosophy
 
 **Non-blue holds the premium removal.** Blue is intentionally weak at answering resolved threats — it leans on tempo (bounce, tap-down), card advantage, and counterspells instead of clean removal. Counterspell density should stay moderate; a deck that's all counterspells is un-fun for the opponent, so counters are a tool in blue's kit, not the whole kit.

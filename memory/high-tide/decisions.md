@@ -2,7 +2,20 @@
 
 Newest first. Each entry: date, change, rationale.
 
-## 2026-08-30
+## 2026-08-30 (blue hate + Tinker target pool corrections)
+- **Green's "blue hate" thread upgraded from light thematic note to a documented identity pillar**: 10 of green's ~38 nonland cards (over a quarter of the color) carry explicit anti-blue text — protection/hexproof from blue (Skylasher, Karoo Meerkat, Sporeweb Weaver, Veil of Summer), can't-be-countered (Skylasher, Veil of Summer, Surrak Elusive Hunter, Destiny Spinner, Balustrade Wurm), and direct punish-blue triggers (Seedtime, Eyes of the Wisent, Arasta of the Endless Web). Documented in `identity.md` under "Blue as oxygen" since it's the mechanical answer to the cube's core premise, not incidental flavor.
+- **Tinker/artifact ramp corrected**: verified Portal to Phyrexia is NOT in the cube (0 hits on a direct CSV check) — the old packages.md reference was stale aspirational text, never actually added. Urza, Prince of Kroog recategorized from payoff to enabler (he's a 4cmc creature that pumps/copies artifacts, not a Tinker target). Confirmed Tinker's real target pool is exactly the 14 CMC-5+ artifacts in the cube (full list in packages.md) — Tinker functions as a one-card sub-package with a fixed, enumerable hit list.
+
+## 2026-08-30 (packages re-derivation)
+- Re-derived `packages.md` from scratch against the actual 432-card list (the prior version was 3 weeks stale) using `card-analyst` to tag all 293 nonland cards by functional color bucket + mechanical theme, then hand-corrected against user confirmation. Full per-color findings and corrections:
+  - **White** initially looked like an outlier (only 1 clear package: Artifacts). Resolved — its 12-card removal/wrath suite is Draw-go control's backbone, not baseline filler, so White already meets the "2+ packages per color" design goal via Artifacts (Tinker's UW sublane) + Control (Draw-go control).
+  - **New package: Blink/ETB value** (W primary) — Charming Prince/Flickerwisp/Guardian of Faith/Restoration Angel enabling Skyclave Apparition/Mulldrifter/Baleful Strix.
+  - **New light build-around: Tap-down value** (WU) — Diversion Unit enabling Hylda of the Icy Crown/Verity Circle. Explicitly NOT a full package by design — a couple of build-arounds, not a draftable pillar.
+  - **High Tide storm reclassified UR** (was Mono-U) — red carries real storm finishers (Grapeshot, Empty the Warrens, Past in Flames, Seize the Storm). Confirmed light, deliberate stretch into B (Tendrils of Agony, Bolas's Citadel → low-frequency UBR) and single-card nods in G (Chatterstorm) and W (Tempest Technique, literal Storm keyword).
+  - **Self-mill and Blue burn (mill) reclassified Mono-U primary** (were UB) — most of the mill enabler suite (Maddening Cacophony, Compelling Argument, Clear the Mind, Stream of Thought, etc.) uses "target player" templating by deliberate design, so the identical card pool serves both the self-mill-to-Laboratory-Maniac/Jace win and the mill-the-opponent-out win depending on target choice. "Mill (aggressive)" renamed **Blue burn (mill)** per user's terminology.
+  - Black's thin storm/ritual thread (Tendrils of Agony, Bolas's Citadel) confirmed intentional — a low-frequency UBR pull, not meant to grow into a full pillar.
+
+## 2026-08-30 (land base, control re-scope, BG pair)
 - Land base target revised: **55 Islands / 85 nonbasic (140 total)** confirmed as the new locked target, replacing the 2026-08-03 80/60 split — mock drafts showed off-color decks needed more fixing density than planned. The "abundant Islands, contested spells" feel held up despite the lower Island count.
 - Opposition, Upheaval, Control Magic, and Treachery cut to maybeboard (not in the 432) after playtester feedback (Discord) flagged them as un-fun — repeatable lock effects / one-sided theft. Draw-go control survives as an archetype, re-scoped to a classic UW/UB shell (counterspells + spot removal + board wipes) instead of lock pieces.
 - One peer flagged Force of Will + Daze as too strong for the format; kept in deliberately. Watch item for the first human draft, not acting on it yet.
