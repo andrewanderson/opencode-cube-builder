@@ -38,7 +38,7 @@ game:paper -is:digital lang:en -st:funny -is:universesbeyond -s:por -s:p02 -s:pt
 ```
 
 - No online/digital cards, English only, no "un" sets, no Universes Beyond
-  or adjacent sets (P1/P2/PTK Portal sets, ARN, AFR, CLB, HOC), nothing from
+  or adjacent sets (POR, P02, PTK, MAT, ARN, AFR, CLB, HOC), nothing from
   The List (`plst` would circumvent the other filters), no weird promos.
 - Never drop or narrow this preamble to get more results. If a query comes
   back empty, the intent terms are the problem, not the filters.
@@ -50,6 +50,7 @@ game:paper -is:digital lang:en -st:funny -is:universesbeyond -s:por -s:p02 -s:pt
   drop excluded cards from what you report.
 - Explicit user intent overrides: if the user names an excluded card or asks
   for an excluded scope, honor it and say so. Silent relaxation is forbidden.
+- Examples elsewhere in this skill show intent terms only — this preamble is appended at call time.
 
 ## Query philosophy: match intent, not the card
 
@@ -98,7 +99,7 @@ so before trusting any `otag:` empty result, check the local slug cache:
    the `.jsonl.gz` (~6MB) straight to temp disk with bash
    (`Invoke-WebRequest -OutFile`) → decompress. Never route it through
    context.
-3. Grep locally — ~4,570 tag objects with `slug`, `label`, `description`.
+3. Grep locally — ~4,570 tag objects with `slug`, `label`, `description`, `hierarchy`.
 
 For "similar to X": resolve the card's `oracle_id` via
 `https://api.scryfall.com/cards/named?exact=<name>` (the MCP doesn't expose
@@ -141,7 +142,7 @@ the query first rather than paging forever.
 | Combo / tribal around a focus card | `find_synergistic_cards` |
 | Meta role-filling | `search_format_staples` |
 | Natural-language → syntax | **never** — `build_scryfall_query` is broken |
-| Deck analysis, mana base, batch legality/prices | out of scope for cube work |
+| Deck analysis, mana base, batch legality/prices | out of scope for this skill |
 
 ## Operator reference (rusty corners only)
 
