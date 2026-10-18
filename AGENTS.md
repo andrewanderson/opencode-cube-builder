@@ -15,7 +15,7 @@ The user values direct, honest collaboration over politeness. Follow these rules
 
 This repo contains the opencode configuration for building and maintaining Magic: the Gathering cubes. All project config lives under `.opencode/`.
 
-### Agents (`.opencode/agent/`)
+### Agents (`.opencode/agents/`)
 
 - **`archivist`** (primary, `anthropic/claude-sonnet-5`, temperature 0.6) — the main cube designer. Handles design, card evaluation, cube balance, record analysis.
 - **`git-executor`** (subagent, `opencode/big-pickle`, temperature 0) — performs ALL git operations on request. `edit` and `task` denied. Loads the `git-operations` skill. Only agent allowed to run git commands.

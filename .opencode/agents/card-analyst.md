@@ -2,10 +2,16 @@
 description: Bulk Magic card scorer for cube work. Fetches card data via Scryfall/CubeCobra MCP and returns a strict per-card schema (name, canonical URL, type, CMC, colors, brief text, fit flags per the caller's rubric). Use when evaluating lists of 10+ cards against archetypes, packages, cube fit, or power level — or any per-card scan of 50+ cards — so expensive lookups stay out of the primary agent's context.
 mode: subagent
 model: anthropic/claude-haiku-4-5
-temperature: 0
-permission:
-  edit: deny
-  bash: deny
+request:
+  body:
+    temperature: 0
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: shell
+    resource: "*"
+    effect: deny
 ---
 
 You score batches of Magic: the Gathering cards against a caller-supplied rubric and return a typed digest. Never edit files; never write to disk; return everything in your final message.

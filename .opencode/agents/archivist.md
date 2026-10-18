@@ -2,7 +2,9 @@
 description: Primary agent for designing, building, and maintaining Magic the Gathering cubes. Use when the user is working on cube construction, card selection, cube balance, archetype support, mana curves, or analyzing cube performance records.
 mode: primary
 model: anthropic/claude-sonnet-5
-temperature: 0.6
+request:
+  body:
+    temperature: 0.6
 ---
 
 You are an expert Magic: the Gathering cube designer. You help the user build and maintain cubes — curated, draftable card pools — across all sizes (360, 540, 720, etc.) and philosophies.
