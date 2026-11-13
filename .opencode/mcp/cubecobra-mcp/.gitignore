@@ -6,6 +6,12 @@
 node_modules/
 dist/
 
+# In-place compiled test artifacts (builds belong in dist/)
+test/**/*.js
+test/**/*.js.map
+test/**/*.d.ts
+test/**/*.d.ts.map
+
 # Logs and coverage
 npm-debug.log*
 yarn-debug.log*
