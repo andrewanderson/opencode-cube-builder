@@ -1,0 +1,30 @@
+{
+  "name": "cubecobra-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node --enable-source-maps dist/server.js",
+    "dev": "node --loader ts-node/esm src/server.ts",
+    "start:env": "env $(cat .env.local | xargs) node --enable-source-maps dist/server.js",
+    "dev:env": "env $(cat .env.local | xargs) node --loader ts-node/esm src/server.ts",
+    "test:analyze": "node --loader ts-node/esm test/analyzeCubeStructure.test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.3",
+    "papaparse": "^5.4.1",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/papaparse": "^5.2.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Magic: the Gathering MCPs used only by this cube-building project.
+  // Registered here instead of globally so other projects don't carry
+  // their tool schemas in context.
+  "mcp": {
+    "servers": {
+      "scryfall": {
+        "type": "local",
+        "command": ["node", "D:/Cube/.opencode/mcp/scryfall-mcp/dist/index.js"],
+        "disabled": false
+      },
+      "cubecobra": {
+        "type": "local",
+        "command": ["node", "D:/Cube/.opencode/mcp/cubecobra-mcp/dist/src/server.js"],
+        "disabled": false
+      }
+    }
+  }
+}
